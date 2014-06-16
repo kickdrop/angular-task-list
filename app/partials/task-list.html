@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row task-widget">
+    <div class="col-md-3 col-sm-4">
+      <ul class="nav nav-pills nav-stacked">
+        <li ng-class="{active: currentList.title == list.title}" ng-repeat="list in lists track by $index" ng-mouseenter="show = true" ng-mouseleave="show = false">
+          <a data-toggle="tab" href="#{{list.listId}}">
+            <span class="badge pull-right">{{list.remainingCount}}</span>
+            <div class="destroy pull-right fa fa-trash-o" ng-click="removeList(list)"></div>
+            <strong ng-dblclick="editList(list)">{{list.title}}</strong>
+          </a>
+        </li>
+      </ul>
+      <form id="list-form" ng-submit="addList()" >
+        <div class="input-group new-list">
+          <input id="new-list" placeholder="Create a new list..." ng-model="newList" autofocus class="form-control">
+          <span class=input-group-btn>
+            <div class="btn btn-info new-list" ng-click="addList()">Add list</div>
+          </span>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-9 col-sm-8">
+      <div class="tab-content">
+        <div class="tab-pane active" id="{{currentList}}">
+          <ul class="list-group">
+            <li ng-repeat="task in tasks track by $index" class="list-group-item">
+              <input type="checkbox" ng-model="task.completed">
+              <span>{{task.title}}</span>
+              <div class="fa fa-trash-o pull-right destroy-task" ng-click="removeTask(task)"></div>
+            </li>
+          </ul>
+
+          <form id="task-form" ng-submit="addTask()" >
+            <div class="input-group new-task">
+              <input id="new-task" placeholder="Create a new task…" ng-model="newTask" autofocus class="form-control">
+              <span class=input-group-btn>
+                <div class="btn btn-info" ng-click="addTask()" type=button>Add task</div>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

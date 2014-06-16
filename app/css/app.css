@@ -1,0 +1,67 @@
+body {
+  background-color: #f5efe6;
+  padding: 6em 0; }
+
+.task-widget .nav {
+  margin-bottom: 15px; }
+.task-widget .nav-pills > li > a {
+  color: rgba(0, 0, 0, 0.55); }
+  .task-widget .nav-pills > li > a .badge {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    margin-left: 15px; }
+  .task-widget .nav-pills > li > a .destroy {
+    font-size: 14px;
+    margin-top: 2px;
+    color: white;
+    display: none; }
+  .task-widget .nav-pills > li > a:hover {
+    background-color: rgba(0, 0, 0, 0.04); }
+    .task-widget .nav-pills > li > a:hover .destroy {
+      color: rgba(0, 0, 0, 0.6);
+      display: block; }
+.task-widget .nav-pills > li.active > a, .task-widget .nav-pills > li.active > a:hover, .task-widget .nav-pills > li.active > a:focus {
+  background-color: #5bc0de;
+  color: white; }
+  .task-widget .nav-pills > li.active > a .destroy, .task-widget .nav-pills > li.active > a:hover .destroy, .task-widget .nav-pills > li.active > a:focus .destroy {
+    color: white; }
+.task-widget .tab-content {
+  padding: 0;
+  background-color: transparent;
+  border: 0; }
+.task-widget .list-group span {
+  position: relative; }
+  .task-widget .list-group span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: black;
+    -webkit-transition: width 0.2s;
+    transition: width 0.2s; }
+.task-widget .list-group input[type="checkbox"] {
+  margin: 0 15px 0 0;
+  font-size: 18px; }
+  .task-widget .list-group input[type="checkbox"]:checked + span:after {
+    width: 100%; }
+.task-widget .list-group .destroy-task {
+  margin-top: 2px;
+  display: none;
+  cursor: pointer; }
+.task-widget .list-group li:hover .destroy-task {
+  display: block; }
+.task-widget .input-group-btn > .btn {
+  border-color: #5bc0de;
+  margin: 0;
+  font-size: 13px;
+  padding: 9px 12px; }
+  .task-widget .input-group-btn > .btn:hover {
+    border-color: #39b3d7; }
+.task-widget input.form-control {
+  box-shadow: none;
+  border-right: 0;
+  font-size: 13px;
+  padding: 9px 12px;
+  height: 38px; }
