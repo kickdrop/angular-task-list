@@ -1,10 +1,10 @@
 .task-listing.ng-enter,
 .task-listing.ng-leave,
 .task-listing.ng-move {
-  -webkit-animation-duration: .4s;
-  animation-duration: .4s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+	-webkit-animation-duration: .4s;
+	animation-duration: .4s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 
 .task-listing.ng-enter,
