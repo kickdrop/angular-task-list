@@ -23,7 +23,7 @@
       <div class="tab-content">
         <div class="tab-pane active" id="{{currentList}}">
           <ul class="list-group">
-            <li ng-repeat="task in tasks track by $index" class="list-group-item">
+            <li ng-repeat="task in tasks track by $index" class="list-group-item task-listing">
               <input type="checkbox" ng-model="task.completed">
               <span>{{task.title}}</span>
               <div class="fa fa-trash-o pull-right destroy-task" ng-click="removeTask(task)"></div>

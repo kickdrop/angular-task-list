@@ -5,12 +5,14 @@
   "dependencies": {
     "modernizr": "x.x.x",
     "bootstrap": "x.x.x",
+    "font-awesome": "x.x.x",
+    "animate.css": "x.x.x",
     "angular": "1.2.x",
     "angular-loader": "1.2.x",
     "angular-cookies": "1.2.x",
+    "angular-animate": "1.2.x",
     "angular-slugify": "1.x.x",
-    "angularLocalStorage": "0.1.x",
-    "font-awesome": "x.x.x"
+    "angularLocalStorage": "0.1.x"
   },
   "devDependencies": {
     "angular-mocks": "1.2.x",

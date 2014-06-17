@@ -2,6 +2,7 @@
 
 var taskListApp = angular.module('taskListApp', [
   'ngRoute',
+  'ngAnimate',
   'taskListControllers',
   'angularLocalStorage',
   'slugifier'
