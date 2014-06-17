@@ -14,7 +14,9 @@
         <div class="input-group new-list">
           <input id="new-list" placeholder="Create a new list..." ng-model="newList" autofocus class="form-control">
           <span class=input-group-btn>
-            <div class="btn btn-info new-list" ng-click="addList()">Add list</div>
+            <div class="btn btn-info new-list" ng-click="addList()">
+              <span>Add list</span>
+            </div>
           </span>
         </div>
       </form>
@@ -23,10 +25,10 @@
       <div class="tab-content">
         <div class="tab-pane active" id="{{currentList}}">
           <ul class="list-group">
-            <li ng-repeat="task in tasks track by $index" class="list-group-item">
+            <li ng-repeat="task in tasks track by $index" class="list-group-item task-listing">
               <input type="checkbox" ng-model="task.completed">
               <span>{{task.title}}</span>
-              <div class="fa fa-trash-o pull-right destroy-task" ng-click="removeTask(task)"></div>
+              <div class="destroy fa fa-trash-o pull-right destroy-task" ng-click="removeTask(task)"></div>
             </li>
           </ul>
 
@@ -34,7 +36,9 @@
             <div class="input-group new-task">
               <input id="new-task" placeholder="Create a new task…" ng-model="newTask" autofocus class="form-control">
               <span class=input-group-btn>
-                <div class="btn btn-info" ng-click="addTask()" type=button>Add task</div>
+                <div class="btn btn-info add-task-btn" ng-click="addTask()" type=button>
+                  <span>Add task</span>
+                </div>
               </span>
             </div>
           </form>
