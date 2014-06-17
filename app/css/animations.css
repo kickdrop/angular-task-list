@@ -17,3 +17,21 @@
   -webkit-animation-name: slideOutRight;
   animation-name: slideOutRight;
 }
+
+.btn span:hover {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+.fa-trash-o.destroy:hover {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
