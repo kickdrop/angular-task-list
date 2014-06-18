@@ -1,11 +1,11 @@
 <div class="task-widget">
   <div class="task-lists">
     <ul class="nav nav-pills nav-stacked">
-      <li ng-class="{active: currentList.title == list.title}" ng-repeat="list in lists track by $index" ng-mouseenter="show = true" ng-mouseleave="show = false">
+      <li ng-class="{active: currentList.title == list.title}" ng-repeat="list in lists track by $index">
         <a data-toggle="tab" href="#{{list.listId}}">
           <span class="badge pull-right">{{list.remainingCount}}</span>
           <div class="destroy pull-right glyphicon glyphicon-trash" ng-click="removeList(list)"></div>
-          <strong ng-dblclick="editList(list)">{{list.title}}</strong>
+          <strong>{{list.title}}</strong>
         </a>
       </li>
     </ul>
