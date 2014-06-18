@@ -1,49 +1,49 @@
-<div class="container">
-  <div class="row task-widget">
-    <div class="col-md-3 col-sm-4">
-      <ul class="nav nav-pills nav-stacked">
-        <li ng-class="{active: currentList.title == list.title}" ng-repeat="list in lists track by $index" ng-mouseenter="show = true" ng-mouseleave="show = false">
-          <a data-toggle="tab" href="#{{list.listId}}">
-            <span class="badge pull-right">{{list.remainingCount}}</span>
-            <div class="destroy pull-right fa fa-trash-o" ng-click="removeList(list)"></div>
-            <strong ng-dblclick="editList(list)">{{list.title}}</strong>
-          </a>
+<div class="task-widget">
+  <div class="task-lists">
+    <ul class="nav nav-pills nav-stacked">
+      <li ng-class="{active: currentList.title == list.title}" ng-repeat="list in lists track by $index" ng-mouseenter="show = true" ng-mouseleave="show = false">
+        <a data-toggle="tab" href="#{{list.listId}}">
+          <span class="badge pull-right">{{list.remainingCount}}</span>
+          <div class="destroy pull-right glyphicon glyphicon-trash" ng-click="removeList(list)"></div>
+          <strong ng-dblclick="editList(list)">{{list.title}}</strong>
+        </a>
+      </li>
+    </ul>
+    <form id="list-form" ng-submit="addList()" >
+      <div class="input-group new-list">
+        <input id="new-list" placeholder="Create a new list..." ng-model="newList" autofocus class="form-control">
+        <span class="input-group-btn">
+          <div class="btn new-list" ng-click="addList()">
+            <span class="glyphicon glyphicon-plus"></span>
+          </div>
+        </span>
+      </div>
+    </form>
+  </div>
+
+  <div class="tab-content tasks">
+    <div class="tab-pane active" id="{{currentList}}">
+      <ul>
+        <li ng-repeat="task in tasks track by $index" class="task-listing">
+          <input type="checkbox" ng-model="task.completed">
+          <label>
+            <div class="glyphicon glyphicon-ok"></div>
+          </label>
+          <span>{{task.title}}</span>
+          <div class="destroy glyphicon glyphicon-trash pull-right destroy-task" ng-click="removeTask(task)"></div>
         </li>
       </ul>
-      <form id="list-form" ng-submit="addList()" >
-        <div class="input-group new-list">
-          <input id="new-list" placeholder="Create a new list..." ng-model="newList" autofocus class="form-control">
-          <span class=input-group-btn>
-            <div class="btn btn-info new-list" ng-click="addList()">
-              <span>Add list</span>
+
+      <form id="task-form" ng-submit="addTask()" >
+        <div class="input-group new-task">
+          <input id="new-task" placeholder="Create a new task…" ng-model="newTask" autofocus class="form-control">
+          <span class="input-group-btn">
+            <div class="btn add-task-btn" ng-click="addTask()" type=button>
+              <span class="glyphicon glyphicon-plus"></span>
             </div>
           </span>
         </div>
       </form>
     </div>
-    <div class="col-md-9 col-sm-8">
-      <div class="tab-content">
-        <div class="tab-pane active" id="{{currentList}}">
-          <ul class="list-group">
-            <li ng-repeat="task in tasks track by $index" class="list-group-item task-listing">
-              <input type="checkbox" ng-model="task.completed">
-              <span>{{task.title}}</span>
-              <div class="destroy fa fa-trash-o pull-right destroy-task" ng-click="removeTask(task)"></div>
-            </li>
-          </ul>
-
-          <form id="task-form" ng-submit="addTask()" >
-            <div class="input-group new-task">
-              <input id="new-task" placeholder="Create a new task…" ng-model="newTask" autofocus class="form-control">
-              <span class=input-group-btn>
-                <div class="btn btn-info add-task-btn" ng-click="addTask()" type=button>
-                  <span>Add task</span>
-                </div>
-              </span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  </div><!-- tab-content -->
+</div><!-- task-widget -->
